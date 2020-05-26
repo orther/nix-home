@@ -12,8 +12,10 @@ in
 
     # programs.ssh.enable = true;
     home.file.".ssh/config".source = ./ssh_config;
-    home.file.".ssh/id_rsa".source = ./id_rsa-mbpr;
-    home.file.".ssh/id_rsa.pub".source = ./id_rsa-mbpr.pub;
+    home.file.".ssh/id_rsa-arson".source = ./id_rsa-arson;
+    home.file.".ssh/id_rsa-arson.pub".source = ./id_rsa-arson.pub;
+    home.file.".ssh/id_rsa-mbpr".source = ./id_rsa-mbpr;
+    home.file.".ssh/id_rsa-mbpr.pub".source = ./id_rsa-mbpr.pub;
 
     # programs.ssh.enable = true;
     # programs.ssh.matchBlocks = {
