@@ -1,3 +1,2 @@
-* filter=git-crypt diff=git-crypt
+private/** filter=git-crypt diff=git-crypt
 .gitattributes !filter !diff
-index.nix !filter !diff
