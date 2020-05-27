@@ -20,18 +20,18 @@
     alacritty
     fish
     fish-foreign-env
+
     # Rust CLI Tools! I love rust.
     bandwhich
     bat
     broot
+    coreutils
     exa
-    fd
     fd
     hexyl
     hyperfine
     #navi
     nushell
-    ripgrep
     ripgrep
     starship
     tokei
