@@ -2,10 +2,10 @@
 
 {
   imports = [
+    ../program/editor/doom-emacs/default.nix
     ../program/editor/neovim/default.nix
     ../program/terminal/tmux/default.nix
 
-    ../program/editor/emacs/index.nix
     ../program/file-manager/ranger/index.nix
     ../program/networking/nmap/index.nix
     ../program/networking/ssh/index.nix
@@ -13,6 +13,7 @@
     ../script/index.nix
   ];
 
+  elemental.home.program.editor.doom-emacs.enable = true;
   elemental.home.program.editor.neovim.enable = true;
   elemental.home.program.networking.ssh.enable = true;
 
