@@ -17,116 +17,116 @@
   elemental.home.program.editor.neovim.enable = true;
   elemental.home.program.networking.ssh.enable = true;
 
-  home.packages = with pkgs; [
-    alacritty
-    fish
-    fish-foreign-env
+  home.packages = with pkgs;
+    [
+      alacritty
+      fish
+      fish-foreign-env
 
-    # Rust CLI Tools! I love rust.
-    bandwhich
-    bat
-    broot
-    coreutils
-    exa
-    fd
-    hexyl
-    hyperfine
-    #navi
-    nushell
-    ripgrep
-    starship
-    tokei
-    topgrade
-    xsv
+      # Rust CLI Tools! I love rust.
+      bandwhich
+      bat
+      broot
+      coreutils
+      exa
+      fd
+      hexyl
+      hyperfine
+      #navi
+      nushell
+      ripgrep
+      starship
+      tokei
+      topgrade
+      xsv
 
-    # Utils
-    age
-    nmap
-    ssh-audit
-    ytop
-    pueue
-    zoxide
+      # Utils
+      age
+      nmap
+      ssh-audit
+      ytop
+      pueue
+      zoxide
 
-    # Common CLI tools
-    fzf
-    gnupg
-    gnutar
-    gopass
-    termtosvg
+      # Common CLI tools
+      fzf
+      gnupg
+      gnutar
+      gopass
+      termtosvg
 
-    # Development
-    ctags
-    direnv
-    dnsutils
-    elixir
-    exercism
-    git-crypt
-    gitAndTools.gitflow
-    glow
-    gnumake
-    go
-    jq
-    lorri
-    lua
-    luarocks
-    nixpkgs-fmt
-    nodejs
-    pre-commit
-    rustup
-    terraform_0_12
-    tmux
-    yarn
-    yq
-    ## Python Dev
-    python37Packages.jupyterlab
-    python37Packages.pylint
+      # Development
+      ctags
+      direnv
+      dnsutils
+      elixir
+      exercism
+      git-crypt
+      gitAndTools.gitflow
+      glow
+      gnumake
+      go
+      jq
+      lorri
+      lua
+      luarocks
+      niv
+      nixpkgs-fmt
+      nodejs
+      pre-commit
+      rustup
+      terraform_0_12
+      tmux
+      yarn
+      yq
+      ## Python Dev
+      python37Packages.jupyterlab
+      python37Packages.pylint
 
+      # Files and networking
+      #brig
+      #ipfs
+      croc
+      gcsfuse
+      gocryptfs
+      magic-wormhole
+      qrencode
+      ranger
+      restic
+      syncthing
+      whois
+      wrk
+      zstd
 
-    # Files and networking
-    #brig
-    #ipfs
-    croc
-    gcsfuse
-    gocryptfs
-    magic-wormhole
-    qrencode
-    ranger
-    restic
-    syncthing
-    whois
-    wrk
-    zstd
+      # Media
+      youtube-dl
+      imagemagick
 
-    # Media
-    youtube-dl
-    imagemagick
+      # Overview
+      htop
+      #wtf
+      lazygit
+      neofetch
 
-    # Overview
-    htop
-    #wtf
-    lazygit
-    neofetch
+      # Jokes
+      cowsay
+      fortune
+      figlet
+      lolcat
+      nms
+    ] ++ lib.optionals stdenv.isLinux [
+      # Graphical
+      anki
+      joplin-desktop
+      standardnotes
 
-    # Jokes
-    cowsay
-    fortune
-    figlet
-    lolcat
-    nms
-  ] ++ lib.optionals stdenv.isLinux [
-    # Graphical
-    anki
-    joplin-desktop
-    standardnotes
+      # Devlopment Graphical
+      android-studio
+      vscode
 
-    # Devlopment Graphical
-    android-studio
-    vscode
-
-    # Files and Networking
-    sshfs
-  ];
-
+      # Files and Networking
+      sshfs
+    ];
 
   # Git
   programs.git = {
@@ -136,11 +136,7 @@
     signing.key = "0xC717DCA60748D52A";
     signing.signByDefault = true;
     extraConfig = {
-      url = {
-        "git@github.com:" = {
-          insteadOf = "https://github.com/";
-        };
-      };
+      url = { "git@github.com:" = { insteadOf = "https://github.com/"; }; };
     };
     # Aliases
     aliases = {
