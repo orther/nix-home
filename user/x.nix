@@ -5,6 +5,7 @@
     ../program/editor/neovim/default.nix
     ../program/terminal/tmux/default.nix
 
+    ../program/editor/emacs/index.nix
     ../program/file-manager/ranger/index.nix
     ../program/networking/nmap/index.nix
     ../program/networking/ssh/index.nix
