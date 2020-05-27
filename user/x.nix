@@ -158,6 +158,9 @@
     };
   };
 
+  programs.emacs.enable = true;
+  programs.emacs.package = pkgs.Emacs; # custom overlay
+
   # Environment
   home.sessionVariables = {
     EDITOR = "nvim";
