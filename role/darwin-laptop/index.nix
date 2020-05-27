@@ -1,5 +1,4 @@
-{ config, lib, pkgs, attrsets, ... }:
-{
+{ config, lib, pkgs, attrsets, ... }: {
   imports = [
     # Files to source for fish config
     ../../program/shell/fish/sources.nix
@@ -9,25 +8,25 @@
 
   programs.alacritty = {
     enable = true;
-    settings = lib.attrsets.recursiveUpdate (import ../../program/terminal/alacritty/default-settings.nix) {
-      shell.program = "fish";
-    };
+    settings = lib.attrsets.recursiveUpdate
+      (import ../../program/terminal/alacritty/default-settings.nix) {
+        shell.program = "fish";
+      };
   };
 
   # Fish Shell
-  programs.fish = lib.attrsets.recursiveUpdate (import ../../program/shell/fish/default.nix) {
-    shellInit = ''
-      bass source $HOME/.nix-profile/etc/profile.d/nix.sh
-      direnv hook fish | source
-      set PATH (fd --absolute-path . $HOME/.config/scripts | tr '\n' ':' | sed 's/.$//') $PATH
-    '';
-  };
+  programs.fish =
+    lib.attrsets.recursiveUpdate (import ../../program/shell/fish/default.nix) {
+      shellInit = ''
+        bass source $HOME/.nix-profile/etc/profile.d/nix.sh
+        direnv hook fish | source
+        set PATH (fd --absolute-path . $HOME/.config/scripts | tr '\n' ':' | sed 's/.$//') $PATH
+      '';
+    };
 
   programs.gpg = {
     enable = true;
-    settings = {
-      default-key = "0x82E36DCCF96E3DE5";
-    };
+    settings = { default-key = "0x82E36DCCF96E3DE5"; };
   };
 
   #services.gpg-agent = {
@@ -55,5 +54,6 @@
   };
 
   home.file.".hammerspoon".source = ../../de/darwin-only/hammerspoon;
-  home.file.".karabiner/karabiner.json".source = ../../de/darwin-only/karabiner/karabiner.json;
+  xdg.configFile."karabiner/karabiner.json".source =
+    ../../de/darwin-only/karabiner/karabiner.json;
 }
