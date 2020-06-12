@@ -55,11 +55,53 @@
 ;; they are implemented.
 
 
-(setq which-key-idle-delay 0.8
-      which-key-allow-regexps nil
-      which-key-allow-evil-operators 1)
+;; (setq which-key-idle-delay 0.8
+;;       which-key-allow-regexps nil
+;;       which-key-allow-evil-operators 1)
+
+(after! which-key
+  (setq which-key-idle-delay 0.25)
+  (setq which-key-idle-secondary-delay 0))
 
 (setq company-idle-delay 0.1)
+
+
+;; TypeScript config copied from https://github.com/orther/doom-emacs-private/blob/mbp-laptop/config.org#typescript
+(after! typescript-mode
+  (add-hook 'typescript-mode-hook #'flycheck-mode)
+  (setq typescript-indent-level 2))
+
+(setq js-indent-level 2
+      js2-basic-offset 2)
+
+(setq +set-eslint-checker nil)
+(after! lsp-ui
+  ;; for whatever reason, this was running twice.
+  (setq lsp-ui-sideline-show-hover t)
+  (when (not +set-eslint-checker)
+    (progn
+      (setq +set-eslint-checker t)
+      (flycheck-add-mode 'javascript-eslint 'web-mode)
+      (flycheck-add-next-checker 'lsp-ui  'javascript-eslint)))
+      (when (not flycheck-javascript-eslint-executable)
+        (setq flycheck-javascript-eslint-executable "eslint_d")))
+
+(after! web-mode
+  (add-hook 'web-mode-hook #'flycheck-mode)
+
+  (setq web-mode-markup-indent-offset 2 ;; Indentation
+        web-mode-code-indent-offset 2
+        web-mode-enable-auto-quoting nil ;; disbale adding "" after an =
+        web-mode-auto-close-style 2))
+
+(after! web-mode
+  (remove-hook 'web-mode-hook #'+javascript-init-lsp-or-tide-maybe-h)
+  (add-hook 'web-mode-local-vars-hook #'+javascript-init-lsp-or-tide-maybe-h))
+
+;; Controls whether Projectile will automatically register known projects.
+;; When set to nil you'll have always add projects explicitly with
+;; `projectile-add-known-project'.
+(setq projectile-track-known-projects-automatically nil)
 
 ;; TODO enable org-mode once we have everything else working with nix home-manager
 ;; ;; If you use `org' and don't want your org files in the default location below,
