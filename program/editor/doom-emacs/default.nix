@@ -9,7 +9,7 @@ in {
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       sbcl
-      editorconfig-checker
+      editorconfig-core-c
       gocode
       gomodifytags
       gotests
