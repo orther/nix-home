@@ -15,10 +15,10 @@ in {
       gotests
       # fonts as an Emacs package
       emacs-all-the-icons-fonts
-      # ispell
-      ispell
-      hunspell
-      hunspellDicts.en-us
+      # spelling
+      aspell
+      aspellDicts.en
+      aspellDicts.en-computers
       # markdown
       pandoc
       # nix
