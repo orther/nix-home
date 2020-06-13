@@ -1,0 +1,12 @@
+{
+  "version": "0.0.0",
+  "name": "npm-bins",
+  "bin": {
+    "stylelint": "./node_modules/.bin/stylelint",
+    "js-beautify": "./node_modules/.bin/js-beautify"
+  },
+  "dependencies": {
+    "js-beautify": "^1.11.0",
+    "stylelint": "^13.6.0"
+  }
+}

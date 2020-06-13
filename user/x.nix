@@ -1,10 +1,13 @@
 { config, pkgs, lib, ... }:
-
-{
+let
+  sources = import ../nix/sources.nix;
+  pkgs = import sources.nixpkgs { };
+in {
   imports = [
     ../program/editor/doom-emacs/default.nix
     ../program/editor/neovim/default.nix
     ../program/terminal/tmux/default.nix
+    ../program/terminal/npm-bins/default.nix
 
     ../program/file-manager/ranger/index.nix
     ../program/networking/nmap/index.nix

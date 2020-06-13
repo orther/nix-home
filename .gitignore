@@ -1,2 +1,4 @@
 home.nix
 !.gitattribute
+
+node_modules/
