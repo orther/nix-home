@@ -2,11 +2,13 @@
   "version": "0.0.0",
   "name": "npm-bins",
   "bin": {
+    "js-beautify": "./node_modules/.bin/js-beautify",
     "stylelint": "./node_modules/.bin/stylelint",
-    "js-beautify": "./node_modules/.bin/js-beautify"
+    "trash": "./node_modules/.bin/trash"
   },
   "dependencies": {
     "js-beautify": "^1.11.0",
-    "stylelint": "^13.6.0"
+    "stylelint": "^13.6.0",
+    "trash-cli": "^3.0.0"
   }
 }

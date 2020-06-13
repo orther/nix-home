@@ -7,7 +7,7 @@ in {
     ../program/editor/doom-emacs/default.nix
     ../program/editor/neovim/default.nix
     ../program/terminal/tmux/default.nix
-    ../program/terminal/npm-bins/default.nix
+    ../program/terminal/npm-bins/index.nix
 
     ../program/file-manager/ranger/index.nix
     ../program/networking/nmap/index.nix
@@ -57,6 +57,7 @@ in {
       gnutar
       gopass
       termtosvg
+      m-cli
 
       # Development
       ctags
